@@ -10,5 +10,6 @@
     ./virtmanager.nix
     ./bluetooth.nix
     ./desktops.nix
+    ./asus.nix
   ];
 }
