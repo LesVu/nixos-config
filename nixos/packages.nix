@@ -5,7 +5,7 @@
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
-    chromium
+    # chromium
     firefox
 
     # CLI utils

@@ -39,7 +39,10 @@
     };
 
     homeConfigurations.char = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
       modules = [ ./home-manager/home.nix ];
     };
   };

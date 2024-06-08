@@ -5,9 +5,7 @@
     ./modules/bundle.nix
   ];
 
-  disabledModules = [
-    ./modules/virtmanager.nix
-  ];
+  disabledModules = [];
 
   # Define your hostname.
   networking.hostName = "penguin-pc"; 
@@ -30,6 +28,11 @@
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Enabling flakes
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 
   system.stateVersion = "24.05";
 }
