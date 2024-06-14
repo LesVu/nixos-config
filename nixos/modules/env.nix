@@ -1,5 +1,10 @@
 {
-  environment.variables = {
-    EDITOR = "nvim";
+  environment = {
+    variables = {
+      EDITOR = "nvim";
+    };
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
   };
 }

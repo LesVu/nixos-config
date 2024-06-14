@@ -5,7 +5,10 @@
     ./modules/bundle.nix
   ];
 
-  disabledModules = [];
+  disabledModules = [
+    ./modules/asus.nix
+    ./modules/nvidia_graphics.nix
+  ];
 
   # Define your hostname.
   networking.hostName = "penguin-pc"; 

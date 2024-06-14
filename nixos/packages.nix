@@ -17,6 +17,9 @@
     unzip
     zram-generator
     zip
+    pciutils
+    glxinfo
+    vulkan-tools
 
     # GPU stuff 
     
