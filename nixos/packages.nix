@@ -22,13 +22,13 @@
     vulkan-tools
 
     # GPU stuff 
-    
+
     # Other
     home-manager
   ];
 
-  # fonts.packages = with pkgs; [
-  #   noto-fonts
-  #   (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-  # ];
+  fonts.packages = with pkgs; [
+    noto-fonts
+    (nerdfonts.override { fonts = [ "Hack" ]; })
+  ];
 }
