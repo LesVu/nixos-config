@@ -11,7 +11,8 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    
+    nixvim-flake.url = "github:LesVu/nixvim_config";
     # nixvim = {
     #   url = "github:nix-community/nixvim";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -45,6 +46,9 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+      };
+      extraSpecialArgs = {
+        inherit system inputs;
       };
       modules = [ ./home-manager/home.nix ];
     };
