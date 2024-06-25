@@ -18,6 +18,7 @@
     zram-generator
     zip
     pciutils
+    screen
     # glxinfo
     # vulkan-tools
 

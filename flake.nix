@@ -1,11 +1,6 @@
 {
   description = "My system configuration";
-  nixConfig = {
-    extra-substituters = [ "https://raspberry-pi-nix.cachix.org" ];
-    extra-trusted-public-keys = [
-      "raspberry-pi-nix.cachix.org-1:WmV2rdSangxW0rZjY/tBvBDSaNFQ3DyEQsVw8EvHn9o="
-    ];
-  };
+
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
