@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
     # Desktop apps
     # chromium
-    firefox
+    # firefox
 
     # CLI utils
     neofetch
@@ -18,8 +18,8 @@
     zram-generator
     zip
     pciutils
-    glxinfo
-    vulkan-tools
+    # glxinfo
+    # vulkan-tools
 
     # GPU stuff 
 

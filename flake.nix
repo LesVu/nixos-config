@@ -1,10 +1,16 @@
 {
   description = "My system configuration";
-
+  nixConfig = {
+    extra-substituters = [ "https://raspberry-pi-nix.cachix.org" ];
+    extra-trusted-public-keys = [
+      "raspberry-pi-nix.cachix.org-1:WmV2rdSangxW0rZjY/tBvBDSaNFQ3DyEQsVw8EvHn9o="
+    ];
+  };
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    raspberry-pi-nix.url = "github:tstat/raspberry-pi-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -17,14 +23,15 @@
     # };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, raspberry-pi-nix, home-manager, ... }@inputs:
 
     let
-      system = "x86_64-linux";
+      system = "aarch64-linux";
     in {
 
     # penguin-pc - system hostname
-    nixosConfigurations.penguin-pc = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.penguin = nixpkgs.lib.nixosSystem {
+      inherit system;
       specialArgs = {
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
@@ -33,6 +40,7 @@
         inherit inputs system;
       };
       modules = [
+        raspberry-pi-nix.nixosModules.raspberry-pi
         ./nixos/configuration.nix
         # inputs.nixvim.nixosModules.nixvim
       ];

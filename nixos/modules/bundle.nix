@@ -12,5 +12,6 @@
     ./desktops.nix
     ./asus.nix
     ./nvidia_graphics.nix
+    ./ssh.nix
   ];
 }
