@@ -4,9 +4,7 @@
     ./modules/bundle.nix
   ];
 
-  disabledModules = [
-    ./modules/vscode.nix
-  ];
+  disabledModules = [ ];
 
   home = {
     username = "char";

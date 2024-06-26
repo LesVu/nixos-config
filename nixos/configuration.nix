@@ -1,22 +1,14 @@
-{ inputs, raspberry-pi-nix, ...}: {
+{ inputs, raspberry-pi-nix, ... }: {
   imports = [
     #./hardware-configuration.nix
     ./packages.nix
     ./modules/bundle.nix
   ];
 
-  disabledModules = [
-    ./modules/asus.nix
-    ./modules/nvidia_graphics.nix
-    ./modules/sound.nix
-    ./modules/xserver.nix
-    ./modules/desktops.nix
-    ./modules/bootloader.nix
-    ./modules/virtmanager.nix
-  ];
+  disabledModules = [ ];
 
   # Define your hostname.
-  networking.hostName = "penguin"; 
+  networking.hostName = "penguin";
   raspberry-pi-nix.libcamera-overlay.enable = false;
   # Set your time zone.
   time.timeZone = "Asia/Singapore";
