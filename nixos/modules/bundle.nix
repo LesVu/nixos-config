@@ -7,7 +7,7 @@
     ./user.nix
     ./xserver.nix
     ./nm.nix
-    ./virtmanager.nix
+    ./virtualization.nix
     ./bluetooth.nix
     ./desktops.nix
     ./asus.nix

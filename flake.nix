@@ -11,39 +11,39 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixvim = {
-    #   url = "github:nix-community/nixvim";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    nixvim-flake.url = "github:LesVu/nixvim_config";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
 
     let
       system = "x86_64-linux";
-    in {
+    in
+    {
+      # penguin-pc - system hostname
+      nixosConfigurations.penguin-pc = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          inherit inputs system;
+        };
+        modules = [
+          ./nixos/configuration.nix
+          # inputs.nixvim.nixosModules.nixvim
+        ];
+      };
 
-    # penguin-pc - system hostname
-    nixosConfigurations.penguin-pc = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
+      homeConfigurations.char = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
         };
-        inherit inputs system;
+        extraSpecialArgs = {
+          inherit system inputs;
+        };
+        modules = [ ./home-manager/home.nix ];
       };
-      modules = [
-        ./nixos/configuration.nix
-        # inputs.nixvim.nixosModules.nixvim
-      ];
     };
-
-    homeConfigurations.char = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      modules = [ ./home-manager/home.nix ];
-    };
-  };
 }

@@ -1,4 +1,4 @@
-{ inputs, ...}: {
+{ inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
@@ -7,11 +7,11 @@
 
   disabledModules = [
     ./modules/asus.nix
-    ./modules/nvidia_graphics.nix
+    # ./modules/nvidia_graphics.nix
   ];
 
   # Define your hostname.
-  networking.hostName = "penguin-pc"; 
+  networking.hostName = "penguin-pc";
 
   # Set your time zone.
   time.timeZone = "Asia/Singapore";

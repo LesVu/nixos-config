@@ -18,10 +18,14 @@
     zram-generator
     zip
     pciutils
-    glxinfo
-    vulkan-tools
+
+    # Virtualization
+    distrobox
+    lazydocker
 
     # GPU stuff 
+    glxinfo
+    vulkan-tools
 
     # Other
     home-manager
