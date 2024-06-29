@@ -1,16 +1,17 @@
 {
   imports = [
-    ./bootloader.nix
-    ./sound.nix
-    ./zram.nix
-    ./env.nix
-    ./user.nix
-    ./xserver.nix
-    ./nm.nix
-    ./virtualization.nix
-    ./bluetooth.nix
-    ./desktops.nix
+    ./application.nix
     ./asus.nix
+    ./bluetooth.nix
+    ./bootloader.nix
+    ./desktops.nix
+    ./env.nix
+    ./nm.nix
     ./nvidia_graphics.nix
+    ./sound.nix
+    ./user.nix
+    ./virtualization.nix
+    ./xserver.nix
+    ./zram.nix
   ];
 }
