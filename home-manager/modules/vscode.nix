@@ -1,6 +1,6 @@
-{pkgs, ...}: {
+{ pkgs-unstable, ... }: {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode.fhsWithPackages (ps: with ps; [ nil nixpkgs-fmt ]);
+    package = pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixpkgs-fmt ]);
   };
 }

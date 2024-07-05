@@ -15,19 +15,18 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
-
     let
       system = "x86_64-linux";
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
       # penguin-pc - system hostname
       nixosConfigurations.penguin-pc = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          inherit inputs system;
+          inherit inputs system pkgs-unstable;
         };
         modules = [
           ./nixos/configuration.nix
@@ -41,7 +40,7 @@
           config.allowUnfree = true;
         };
         extraSpecialArgs = {
-          inherit system inputs;
+          inherit system inputs pkgs-unstable;
         };
         modules = [ ./home-manager/home.nix ];
       };
