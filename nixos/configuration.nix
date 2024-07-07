@@ -1,6 +1,6 @@
-{ inputs, raspberry-pi-nix, ... }: {
+{ raspberry-pi-nix, ... }: {
   imports = [
-    #./hardware-configuration.nix
+    ./hardware-configuration.nix
     ./packages.nix
     ./modules/bundle.nix
   ];
@@ -34,5 +34,6 @@
     options = "--delete-older-than 7d";
   };
 
+  programs.nix-ld.enable = true;
   system.stateVersion = "24.05";
 }

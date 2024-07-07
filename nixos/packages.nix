@@ -19,10 +19,11 @@
     zip
     pciutils
     screen
-    # glxinfo
-    # vulkan-tools
+    nodejs_18
 
-    # GPU stuff 
+    # Virtualization
+    distrobox
+    lazydocker
 
     # Other
     home-manager
