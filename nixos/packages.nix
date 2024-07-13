@@ -7,6 +7,7 @@
     # Desktop apps
     # chromium
     firefox
+    remmina
 
     # CLI utils
     neofetch
@@ -18,6 +19,8 @@
     zram-generator
     zip
     pciutils
+    nodejs_18
+    python3
 
     # Virtualization
     distrobox
@@ -29,10 +32,12 @@
 
     # Other
     home-manager
+    parsec-bin
   ];
 
   fonts.packages = with pkgs; [
     noto-fonts
+    noto-fonts-cjk-sans
     (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
 }
