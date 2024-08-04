@@ -9,7 +9,7 @@
 
   # Define your hostname.
   networking.hostName = "penguin";
-  raspberry-pi-nix.libcamera-overlay.enable = false;
+
   # Set your time zone.
   time.timeZone = "Asia/Singapore";
 
@@ -33,6 +33,10 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
+
+  # Raspberry pi configs
+  raspberry-pi-nix.board = "bcm2711";
+  raspberry-pi-nix.libcamera-overlay.enable = false;
 
   programs.nix-ld.enable = true;
   system.stateVersion = "24.05";
