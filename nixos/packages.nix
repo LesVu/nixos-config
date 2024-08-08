@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-unstable, ... }: {
   nixpkgs.config = {
     allowUnfree = true;
   };
@@ -27,6 +27,11 @@
 
     # Other
     home-manager
+    pkgs-unstable.raspberrypi-eeprom
+    #.overrideAttrs
+    #(finalAttrs: previousAttrs: {
+    #  version = "2024.06.05-2712";
+    #})
   ];
 
   fonts.packages = with pkgs; [

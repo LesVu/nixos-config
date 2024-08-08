@@ -1,5 +1,5 @@
 {
-  fileSystems."/export/mnt" = {
+  fileSystems."/srv/smbnix/tbstores" = {
     device = "/dev/disk/by-uuid/3503be00-1ca8-4ca6-8cb6-8e0656d0ebb9";
     fsType = "ext4";
     options = [

@@ -18,15 +18,26 @@
     '';
     shares = {
       stores = {
-        path = "/export";
+        path = "/srv/smbnix/stores";
         browseable = "yes";
         "read only" = "no";
         "guest ok" = "yes";
-        "guest only" = "yes";
         "create mask" = "0664";
         "directory mask" = "0775";
+        "force user" = "nobody";
+        "force group" = "nogroup";
+      };
+      tbstores = {
+        path = "/srv/smbnix/tbstores";
+        browseable = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0660";
+        "directory mask" = "0770";
+        "force user" = "char";
         "force group" = "char";
       };
+
     };
   };
 
