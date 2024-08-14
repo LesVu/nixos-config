@@ -8,9 +8,9 @@
         flakeDir = "~/nix";
       in
       {
-        rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
+        rb = "nixos-rebuild switch --use-remote-sudo --flake ${flakeDir}";
         upd = "nix flake update ${flakeDir}";
-        upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
+        upg = "nixos-rebuild switch --upgrade --use-remote-sudo --flake ${flakeDir}";
 
         hms = "home-manager switch --flake ${flakeDir}";
 
