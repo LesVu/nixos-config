@@ -7,11 +7,16 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     raspberry-pi-nix.url = "github:tstat/raspberry-pi-nix";
 
+    lix = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     nixvim-flake.url = "github:LesVu/nixvim_config";
     # nixvim = {
     #   url = "github:nix-community/nixvim";
@@ -19,38 +24,40 @@
     # };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, raspberry-pi-nix, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, raspberry-pi-nix, lix, home-manager, ... }@inputs:
 
     let
       system = "aarch64-linux";
-    in {
+    in
+    {
 
-    # penguin-pc - system hostname
-    nixosConfigurations.penguin = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
+      # penguin-pc - system hostname
+      nixosConfigurations.penguin = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          inherit inputs system;
+        };
+        modules = [
+          raspberry-pi-nix.nixosModules.raspberry-pi
+          lix.nixosModules.default
+          ./nixos/configuration.nix
+          # inputs.nixvim.nixosModules.nixvim
+        ];
+      };
+
+      homeConfigurations.char = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
         };
-        inherit inputs system;
+        extraSpecialArgs = {
+          inherit system inputs;
+        };
+        modules = [ ./home-manager/home.nix ];
       };
-      modules = [
-        raspberry-pi-nix.nixosModules.raspberry-pi
-        ./nixos/configuration.nix
-        # inputs.nixvim.nixosModules.nixvim
-      ];
     };
-
-    homeConfigurations.char = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      extraSpecialArgs = {
-        inherit system inputs;
-      };
-      modules = [ ./home-manager/home.nix ];
-    };
-  };
 }
