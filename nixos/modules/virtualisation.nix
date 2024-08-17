@@ -1,5 +1,4 @@
-{ pkgs, ... }: {
-
+{
   virtualisation = {
     libvirtd.enable = true;
     containers.enable = true;
@@ -14,9 +13,6 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
-  programs.virt-manager = {
-    enable = true;
-    package = pkgs.virt-manager;
-  };
+  programs.virt-manager.enable = true;
 }
 

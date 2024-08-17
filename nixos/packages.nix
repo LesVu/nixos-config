@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-unstable, ... }: {
   nixpkgs.config = {
     allowUnfree = true;
   };
@@ -19,8 +19,11 @@
     zram-generator
     zip
     pciutils
+
+    # Development
     nodejs_18
     python3
+    (pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixpkgs-fmt ]))
 
     # Virtualization
     distrobox

@@ -10,7 +10,7 @@
     ./nvidia_graphics.nix
     ./sound.nix
     ./user.nix
-    ./virtualization.nix
+    ./virtualisation.nix
     ./xserver.nix
     ./zram.nix
   ];
