@@ -8,6 +8,6 @@
     ./ssh.nix
     ./share.nix
     ./tailscale.nix
-    ./virtualization.nix
+    ./virtualisation.nix
   ];
 }

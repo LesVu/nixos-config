@@ -1,4 +1,10 @@
 { pkgs, pkgs-unstable, ... }: {
+  imports = [
+    ./overlays.nix
+  ];
+
+  disabledModules = [ ./overlays.nix ];
+
   nixpkgs.config = {
     allowUnfree = true;
   };
@@ -19,19 +25,20 @@
     zip
     pciutils
     screen
+
+    # Development
     nodejs_18
+    nixpkgs-fmt
+    nil
 
     # Virtualization
     distrobox
     lazydocker
+    # cockpit-machines
 
     # Other
     home-manager
     pkgs-unstable.raspberrypi-eeprom
-    #.overrideAttrs
-    #(finalAttrs: previousAttrs: {
-    #  version = "2024.06.05-2712";
-    #})
   ];
 
   fonts.packages = with pkgs; [
