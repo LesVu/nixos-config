@@ -3,7 +3,7 @@
     ./zram.nix
     ./env.nix
     ./user.nix
-    ./nm.nix
+    ./network.nix
     ./bluetooth.nix
     ./ssh.nix
     ./share.nix
