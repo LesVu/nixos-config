@@ -3,7 +3,7 @@
     ./overlays.nix
   ];
 
-  disabledModules = [ ./overlays.nix ];
+  disabledModules = [ ];
 
   nixpkgs.config = {
     allowUnfree = true;

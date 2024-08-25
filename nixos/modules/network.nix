@@ -3,7 +3,8 @@
   #   enable = true;
   #   insertNameservers = [ "1.1.1.1" "1.0.0.1" "8.8.8.8" "8.4.4.8" ];
   # };
-
+  networking.dhcpcd.enable = false;
+  networking.useDHCP = false;
   systemd.network = {
     enable = true;
     networks = {
@@ -27,7 +28,12 @@
       netdevConfig = {
         Name = "vmbr0";
         Kind = "bridge";
+        MACAddress = "none";
       };
+    };
+    links."10-vmbr0" = {
+      matchConfig = { OriginalName = "vmbr0"; };
+      linkConfig = { MACAddressPolicy = "none"; };
     };
 
   };
