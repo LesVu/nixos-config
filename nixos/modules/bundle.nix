@@ -6,6 +6,7 @@
     ./bootloader.nix
     ./desktops.nix
     ./env.nix
+    ./kernel.nix
     ./nm.nix
     ./nvidia_graphics.nix
     ./sound.nix
