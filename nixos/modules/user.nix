@@ -3,9 +3,9 @@
   users.users.char = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
-    packages = with pkgs; [ ];
+    # packages = with pkgs; [ ];
   };
 
   # Enable automatic login for the user.
-  services.getty.autologinUser = "char";
+  # services.getty.autologinUser = "char";
 }

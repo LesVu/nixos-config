@@ -36,6 +36,8 @@
     # Other
     home-manager
     parsec-bin
+    pkgs-unstable.anki-bin
+    pkgs-unstable.obsidian
   ];
 
   fonts.packages = with pkgs; [

@@ -6,7 +6,7 @@
   ];
 
   disabledModules = [
-    ./modules/asus.nix
+    # ./modules/asus.nix
     # ./modules/nvidia_graphics.nix
   ];
 
