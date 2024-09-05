@@ -38,6 +38,7 @@
     parsec-bin
     pkgs-unstable.anki-bin
     pkgs-unstable.obsidian
+    rquickshare
   ];
 
   fonts.packages = with pkgs; [
