@@ -3,5 +3,6 @@
     ./git.nix
     ./bash.nix
     ./nixvim.nix
+    ./direnv.nix
   ];
 }

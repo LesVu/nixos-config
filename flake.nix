@@ -18,10 +18,9 @@
     };
 
     nixvim-flake.url = "github:LesVu/nixvim_config";
-    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, raspberry-pi-nix, lix, home-manager, proxmox-nixos, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, raspberry-pi-nix, lix, home-manager, ... }@inputs:
 
     let
       system = "aarch64-linux";
@@ -41,7 +40,6 @@
         modules = [
           raspberry-pi-nix.nixosModules.raspberry-pi
           lix.nixosModules.default
-          proxmox-nixos.nixosModules.proxmox-ve
           ./nixos/configuration.nix
         ];
       };
