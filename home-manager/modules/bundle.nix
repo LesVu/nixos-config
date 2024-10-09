@@ -4,5 +4,6 @@
     ./bash.nix
     ./nixvim.nix
     ./direnv.nix
+    ./tmux.nix
   ];
 }
