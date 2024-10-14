@@ -1,10 +1,28 @@
+let
+  dns = [
+    "1.1.1.1#one.one.one.one"
+    "1.0.0.1#one.one.one.one"
+  ];
+in
 {
-  # networking.networkmanager = {
-  #   enable = true;
-  #   insertNameservers = [ "1.1.1.1" "1.0.0.1" "8.8.8.8" "8.4.4.8" ];
-  # };
-  networking.dhcpcd.enable = false;
-  networking.useDHCP = false;
+  networking = {
+    dhcpcd.enable = false;
+    useDHCP = false;
+    nameservers = dns;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 80 443 5173 3000 ];
+    };
+  };
+
+  services.resolved = {
+    enable = true;
+    dnssec = "true";
+    domains = [ "~." ];
+    fallbackDns = dns;
+    dnsovertls = "true";
+  };
+
   systemd.network = {
     enable = true;
     networks = {

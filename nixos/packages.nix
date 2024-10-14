@@ -10,10 +10,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # Desktop apps
-    # chromium
-    # firefox
-
     # CLI utils
     neofetch
     file

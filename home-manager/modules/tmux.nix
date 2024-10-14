@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.tmux = {
     enable = true;
-    terminal = "xterm-256color";
+    terminal = "screen-256color";
     historyLimit = 100000;
     mouse = true;
     prefix = "C-a";
