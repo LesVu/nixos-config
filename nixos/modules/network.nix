@@ -11,7 +11,7 @@ in
     nameservers = dns;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 80 443 5173 3000 ];
+      allowedTCPPorts = [ 22 80 443 5173 3000 ];
     };
   };
 
@@ -27,7 +27,7 @@ in
     enable = true;
     networks = {
       "10-lan" = {
-        matchConfig.Name = [ "end0" ];
+        matchConfig.Name = [ "enp3s0" ];
         networkConfig = {
           Bridge = "vmbr0";
         };

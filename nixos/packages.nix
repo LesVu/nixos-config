@@ -17,13 +17,12 @@
     git
     htop
     unzip
-    zram-generator
     zip
     pciutils
     screen
 
     # Development
-    nodejs_18
+    nodejs_22
     nixpkgs-fmt
     nil
 
@@ -34,7 +33,6 @@
 
     # Other
     home-manager
-    pkgs-unstable.raspberrypi-eeprom
   ];
 
   fonts.packages = with pkgs; [

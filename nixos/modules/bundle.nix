@@ -7,7 +7,6 @@
     ./network.nix
     ./bluetooth.nix
     ./ssh.nix
-    ./share.nix
     ./tailscale.nix
     ./virtualisation.nix
   ];

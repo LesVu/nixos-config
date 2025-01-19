@@ -1,4 +1,4 @@
-{ raspberry-pi-nix, ... }: {
+{
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
@@ -8,7 +8,7 @@
   disabledModules = [ ];
 
   # Define your hostname.
-  networking.hostName = "penguin";
+  networking.hostName = "capybara";
 
   # Set your time zone.
   time.timeZone = "Asia/Singapore";
@@ -34,10 +34,6 @@
     options = "--delete-older-than 7d";
   };
 
-  # Raspberry pi configs
-  raspberry-pi-nix.board = "bcm2711";
-  raspberry-pi-nix.libcamera-overlay.enable = false;
-
   programs.nix-ld.enable = true;
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
