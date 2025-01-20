@@ -21,7 +21,7 @@
     pciutils
 
     # Development
-    nodejs_20
+    nodejs_22
     python3
     (pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixpkgs-fmt ]))
 

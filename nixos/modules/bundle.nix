@@ -3,13 +3,13 @@
     ./application.nix
     ./asus.nix
     ./bluetooth.nix
-    ./bootloader.nix
+    ./boot.nix
     ./desktops.nix
     ./env.nix
-    ./kernel.nix
     ./nm.nix
     ./nvidia_graphics.nix
     ./sound.nix
+    ./tailscale.nix
     ./user.nix
     ./virtualisation.nix
     ./xserver.nix

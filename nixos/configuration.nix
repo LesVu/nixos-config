@@ -11,7 +11,7 @@
   ];
 
   # Define your hostname.
-  networking.hostName = "penguin-pc";
+  networking.hostName = "axolotl";
 
   # Set your time zone.
   time.timeZone = "Asia/Singapore";
@@ -37,5 +37,5 @@
     options = "--delete-older-than 7d";
   };
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
