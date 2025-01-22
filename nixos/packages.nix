@@ -28,6 +28,7 @@
     # Virtualization
     distrobox
     lazydocker
+    podman-desktop
 
     # GPU stuff 
     glxinfo
