@@ -25,6 +25,8 @@
     nodejs_22
     nixpkgs-fmt
     nil
+    gcc
+    gnumake
 
     # Virtualization
     distrobox

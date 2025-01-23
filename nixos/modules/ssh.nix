@@ -17,7 +17,7 @@
       ChallengeResponseAuthentication no
       PermitUserEnvironment no
       AllowAgentForwarding no
-      AllowTcpForwarding no
+      AllowTcpForwarding yes
       PermitTunnel no
     '';
   };
