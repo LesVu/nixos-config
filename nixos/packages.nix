@@ -11,8 +11,9 @@
 
   environment.systemPackages = with pkgs; [
     # CLI utils
-    neofetch
+    fastfetch
     file
+    curl
     wget
     git
     htop

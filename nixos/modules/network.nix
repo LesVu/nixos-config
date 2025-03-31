@@ -1,10 +1,5 @@
-let
-  dns = [
-    "1.1.1.1#one.one.one.one"
-    "1.0.0.1#one.one.one.one"
-  ];
-in
-{
+let dns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+in {
   networking = {
     dhcpcd.enable = false;
     useDHCP = false;
@@ -25,34 +20,16 @@ in
 
   systemd.network = {
     enable = true;
-    networks = {
-      "10-lan" = {
-        matchConfig.Name = [ "enp3s0" ];
-        networkConfig = {
-          Bridge = "vmbr0";
-        };
+    networks."10-lan" = {
+      matchConfig.Name = [ "enp3s0" ];
+      networkConfig = {
+        # start a DHCP Client for IPv4 Addressing/Routing
+        DHCP = "ipv4";
+        # accept Router Advertisements for Stateless IPv6 Autoconfiguraton (SLAAC)
+        IPv6AcceptRA = true;
       };
-
-      "10-lan-bridge" = {
-        matchConfig.Name = "vmbr0";
-        networkConfig = {
-          IPv6AcceptRA = true;
-          DHCP = "ipv4";
-        };
-        linkConfig.RequiredForOnline = "routable";
-      };
+      # make routing on this interface a dependency for network-online.target
+      linkConfig.RequiredForOnline = "routable";
     };
-    netdevs."vmbr0" = {
-      netdevConfig = {
-        Name = "vmbr0";
-        Kind = "bridge";
-        MACAddress = "none";
-      };
-    };
-    links."10-vmbr0" = {
-      matchConfig = { OriginalName = "vmbr0"; };
-      linkConfig = { MACAddressPolicy = "none"; };
-    };
-
   };
 }
