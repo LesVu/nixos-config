@@ -7,12 +7,12 @@
     # Desktop apps
     # chromium
     firefox
-    remmina
 
     # CLI utils
-    neofetch
+    fastfetch
     file
     wget
+    curl
     git
     htop
     unzip
@@ -23,7 +23,7 @@
     # Development
     nodejs_22
     python3
-    (pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixpkgs-fmt ]))
+    # (pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixpkgs-fmt ]))
 
     # Virtualization
     distrobox
@@ -36,10 +36,8 @@
 
     # Other
     home-manager
-    parsec-bin
-    pkgs-unstable.anki-bin
     pkgs-unstable.obsidian
-    rquickshare
+    pkgs-unstable.rquickshare
   ];
 
   fonts.packages = with pkgs; [

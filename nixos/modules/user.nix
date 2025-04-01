@@ -5,7 +5,4 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "podman" ];
     # packages = with pkgs; [ ];
   };
-
-  # Enable automatic login for the user.
-  # services.getty.autologinUser = "char";
 }

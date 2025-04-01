@@ -2,13 +2,10 @@
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
-    ./modules/bundle.nix
+    ./modules
   ];
 
-  disabledModules = [
-    # ./modules/asus.nix
-    # ./modules/nvidia_graphics.nix
-  ];
+  disabledModules = [ ];
 
   # Define your hostname.
   networking.hostName = "axolotl";
