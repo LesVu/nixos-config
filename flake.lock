@@ -98,16 +98,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1743387206,
-        "narHash": "sha256-24N3NAuZZbYqZ39NgToZgHUw6M7xHrtrAm18kv0+2Wo=",
-        "owner": "nix-community",
+        "lastModified": 1744210160,
+        "narHash": "sha256-wpqNwf03oncJla9+pXD9dBWsMaj6xQvvywQ59OkdAHA=",
+        "owner": "LesVu",
         "repo": "home-manager",
-        "rev": "15c5f9d04fabd176f30286c8f52bbdb2c853a146",
+        "rev": "c7dc25c52898dca44f6b0301d9e7a308484ac400",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
-        "ref": "release-24.11",
+        "owner": "LesVu",
+        "ref": "labwc",
         "repo": "home-manager",
         "type": "github"
       }
@@ -179,16 +179,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1743367904,
-        "narHash": "sha256-sOos1jZGKmT6xxPvxGQyPTApOunXvScV4lNjBCXd/CI=",
+        "lastModified": 1744098102,
+        "narHash": "sha256-tzCdyIJj9AjysC3OuKA+tMD/kDEDAF9mICPDU7ix0JA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7ffe0edc685f14b8c635e3d6591b0bbb97365e6c",
+        "rev": "c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-24.11",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -210,11 +210,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1743315132,
-        "narHash": "sha256-6hl6L/tRnwubHcA4pfUUtk542wn2Om+D4UnDhlDW9BE=",
+        "lastModified": 1744098102,
+        "narHash": "sha256-tzCdyIJj9AjysC3OuKA+tMD/kDEDAF9mICPDU7ix0JA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "52faf482a3889b7619003c0daec593a1912fddc1",
+        "rev": "c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
         "type": "github"
       },
       "original": {
@@ -284,11 +284,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1743343901,
-        "narHash": "sha256-TespjiO/3cGVoMgnESQDhgR4M/xmKZKlQJhccuUNF4E=",
+        "lastModified": 1743867864,
+        "narHash": "sha256-6vwj5pRQ5nuoQwsFw5B6g+MvHlx/ENFu3y8Dj9DeRX4=",
         "owner": "LesVu",
         "repo": "nixvim_config",
-        "rev": "1fcd445c317a7ac3ae2c2568690bc990f5742efe",
+        "rev": "2b3f4eeacd7dfd8e95cf4bf33c8efa13579b0b8d",
         "type": "github"
       },
       "original": {

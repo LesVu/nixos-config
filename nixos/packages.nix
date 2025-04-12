@@ -22,17 +22,11 @@
     pciutils
     screen
 
-    # Development
-    nodejs_22
-    nixpkgs-fmt
-    nil
-    gcc
-    gnumake
-
-    # Virtualization
-    distrobox
-    lazydocker
-    # cockpit-machines
+    # Desktops Apps
+    kitty
+    chromium
+    pcmanfm
+    labwc-tweaks
 
     # Other
     home-manager
@@ -40,6 +34,6 @@
 
   fonts.packages = with pkgs; [
     noto-fonts
-    (nerdfonts.override { fonts = [ "Hack" ]; })
+    nerd-fonts.hack
   ];
 }

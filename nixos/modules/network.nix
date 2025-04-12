@@ -21,7 +21,7 @@ in {
   systemd.network = {
     enable = true;
     networks."10-lan" = {
-      matchConfig.Name = [ "enp3s0" ];
+      matchConfig.Name = [ "enp1s0" ];
       networkConfig = {
         # start a DHCP Client for IPv4 Addressing/Routing
         DHCP = "ipv4";

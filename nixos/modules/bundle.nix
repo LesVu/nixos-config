@@ -5,9 +5,8 @@
     ./user.nix
     ./boot.nix
     ./network.nix
-    ./bluetooth.nix
     ./ssh.nix
     ./tailscale.nix
-    ./virtualisation.nix
+    ./desktops.nix
   ];
 }

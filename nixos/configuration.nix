@@ -8,7 +8,7 @@
   disabledModules = [ ];
 
   # Define your hostname.
-  networking.hostName = "capybara";
+  networking.hostName = "gaming";
 
   # Set your time zone.
   time.timeZone = "Asia/Singapore";
@@ -26,6 +26,8 @@
     LC_TELEPHONE = "en_SG.UTF-8";
     LC_TIME = "en_SG.UTF-8";
   };
+
+  services.spice-vdagentd.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Enabling flakes
   nix.gc = {

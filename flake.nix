@@ -3,8 +3,9 @@
 
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     lix = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0-3.tar.gz";
@@ -12,7 +13,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:LesVu/home-manager/labwc";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,7 +28,7 @@
     {
 
       # capybara - system hostname
-      nixosConfigurations.capybara = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           pkgs-unstable = import nixpkgs-unstable {
