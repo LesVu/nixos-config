@@ -1,7 +1,7 @@
 {
 
   imports = [
-    ./modules/bundle.nix
+    ./modules
   ];
 
   disabledModules = [ ];

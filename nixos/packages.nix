@@ -5,9 +5,7 @@
 
   disabledModules = [ ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     # CLI utils
@@ -21,12 +19,6 @@
     zip
     pciutils
     screen
-
-    # Desktops Apps
-    kitty
-    chromium
-    pcmanfm
-    labwc-tweaks
 
     # Other
     home-manager

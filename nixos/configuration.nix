@@ -2,13 +2,14 @@
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
-    ./modules/bundle.nix
+    ./kodama.nix
+    ./modules
   ];
 
   disabledModules = [ ];
 
   # Define your hostname.
-  networking.hostName = "gaming";
+  networking.hostName = "kodama";
 
   # Set your time zone.
   time.timeZone = "Asia/Singapore";
@@ -27,8 +28,6 @@
     LC_TIME = "en_SG.UTF-8";
   };
 
-  services.spice-vdagentd.enable = true;
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Enabling flakes
   nix.gc = {
     automatic = true;
@@ -36,6 +35,5 @@
     options = "--delete-older-than 7d";
   };
 
-  programs.nix-ld.enable = true;
   system.stateVersion = "24.11";
 }
