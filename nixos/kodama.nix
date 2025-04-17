@@ -1,4 +1,8 @@
-{ lib, ... }{
+{ lib, inputs, ... }: {
+  imports = [
+    "${inputs.mobile-nixos}/devices/families/mainline-chromeos-mt8183"
+    (import "${inputs.mobile-nixos}/lib/configuration.nix" { })
+  ];
   mobile.device.name = "lenovo-kodama";
   mobile.device.identity = {
     name = "Chromebook 10e";

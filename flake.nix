@@ -37,13 +37,11 @@
           inherit inputs system;
         };
         modules = [
-          ${mobile-nixos}/devices/families/mainline-chromeos-mt8183
-          ${mobile-nixos}/modules/module-list.nix
           ./nixos/configuration.nix
         ];
       };
 
-      kodama-image = nixosConfigurations.kodama.config.mobile.outputs.default;
+      kodama-image = self.nixosConfigurations.kodama.config.mobile.outputs.default;
 
       homeConfigurations.char = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
