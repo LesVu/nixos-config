@@ -13,7 +13,7 @@
     };
 
     home-manager = {
-      url = "github:LesVu/home-manager/labwc";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,7 +27,7 @@
     in
     {
 
-      # capybara - system hostname
+      # gaming - system hostname
       nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {

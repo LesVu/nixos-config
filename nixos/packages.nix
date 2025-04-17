@@ -5,9 +5,7 @@
 
   disabledModules = [ ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     # CLI utils
@@ -22,12 +20,6 @@
     pciutils
     screen
 
-    # Desktops Apps
-    kitty
-    chromium
-    pcmanfm
-    labwc-tweaks
-
     # Other
     home-manager
   ];
@@ -35,5 +27,6 @@
   fonts.packages = with pkgs; [
     noto-fonts
     nerd-fonts.hack
+    roboto
   ];
 }

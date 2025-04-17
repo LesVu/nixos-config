@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
-    ./modules/bundle.nix
+    ./modules
   ];
 
   disabledModules = [ ];

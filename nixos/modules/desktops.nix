@@ -1,7 +1,11 @@
-{
-  services.xserver = {
+{ pkgs, ... }: {
+  xdg.portal = {
     enable = true;
-    desktopManager.xfce.enable = true;
+    wlr.enable = true;
+    configPackages = [ pkgs.labwc ];
   };
-  services.displayManager.defaultSession = "xfce";
+  security.polkit.enable = true;
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 }
