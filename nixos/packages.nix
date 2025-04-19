@@ -1,4 +1,5 @@
-{ pkgs, pkgs-unstable, ... }: {
+{ pkgs, pkgs-unstable, ... }:
+{
   imports = [
     ./overlays.nix
   ];
@@ -14,7 +15,7 @@
     curl
     wget
     git
-    htop
+    btop
     unzip
     zip
     pciutils
@@ -28,5 +29,6 @@
     noto-fonts
     nerd-fonts.hack
     roboto
+    nerd-fonts.roboto-mono
   ];
 }

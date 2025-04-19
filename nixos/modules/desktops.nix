@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -6,6 +7,4 @@
   };
   security.polkit.enable = true;
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
 }

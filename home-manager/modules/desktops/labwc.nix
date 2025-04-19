@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   wayland.windowManager.labwc = {
     enable = true;
     rc = {
@@ -223,8 +224,9 @@
       }
     ];
     autostart = [
-      "${pkgs.swaybg}/bin/swaybg -i ~/nix/wallpaper.png -m fill &"
+      "${pkgs.waypaper}/bin/waypaper --restore &"
       "${pkgs.waybar}/bin/waybar >/dev/null 2>&1 &"
+      "${pkgs.swaync}/bin/swaync &"
       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
     ];
   };

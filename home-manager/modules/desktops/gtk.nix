@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   gtk = {
     enable = true;
     cursorTheme = {
@@ -7,8 +8,8 @@
       size = 14;
     };
     font = {
-      name = "Noto";
-      size = 12;
+      name = "Noto Sans Regular";
+      size = 10;
     };
     iconTheme = {
       name = "Papirus Dark";

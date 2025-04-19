@@ -1,35 +1,11 @@
-let dns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
-in {
-  networking = {
-    dhcpcd.enable = false;
-    useDHCP = false;
-    nameservers = dns;
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [ 22 80 443 5173 3000 ];
-    };
-  };
-
-  services.resolved = {
+{
+  networking.networkmanager = {
     enable = true;
-    dnssec = "true";
-    domains = [ "~." ];
-    fallbackDns = dns;
-    dnsovertls = "true";
-  };
-
-  systemd.network = {
-    enable = true;
-    networks."10-lan" = {
-      matchConfig.Name = [ "enp1s0" ];
-      networkConfig = {
-        # start a DHCP Client for IPv4 Addressing/Routing
-        DHCP = "ipv4";
-        # accept Router Advertisements for Stateless IPv6 Autoconfiguraton (SLAAC)
-        IPv6AcceptRA = true;
-      };
-      # make routing on this interface a dependency for network-online.target
-      linkConfig.RequiredForOnline = "routable";
-    };
+    insertNameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+      "8.8.8.8"
+      "8.4.4.8"
+    ];
   };
 }

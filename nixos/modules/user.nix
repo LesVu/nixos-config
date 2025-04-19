@@ -1,8 +1,13 @@
-{ pkgs, ... }: {
+{
   users.users.char = {
     isNormalUser = true;
-    extraGroups = [ "char" "wheel" "libvirtd" "docker" ];
-    # packages = with pkgs; [ ];
+    extraGroups = [
+      "char"
+      "wheel"
+      "networkmanager"
+      "video"
+      "input"
+    ];
   };
 
   users.groups.char.gid = 1000;
