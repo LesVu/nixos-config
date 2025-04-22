@@ -1,4 +1,4 @@
-{ lib, inputs, ... }: {
+{ lib, pkgs, inputs, ... }: {
   imports = [
     "${inputs.mobile-nixos}/devices/families/mainline-chromeos-mt8183"
     (import "${inputs.mobile-nixos}/lib/configuration.nix" { })
@@ -17,12 +17,15 @@
     };
   };
 
+  # mobile.boot.stage-1.kernel.package = lib.mkForce (pkgs.callPackage ./kernel {
+  #   inherit (pkgs.linuxPackages_latest) kernel;
+  # });  
+  mobile.boot.stage-1.kernel.package = lib.mkForce pkgs.linuxPackages_latest.kernel;
+
+
   # Ensure orientation match with keyboard.
   services.udev.extraHwdb = lib.mkBefore ''
     sensor:modalias:platform:*
       ACCEL_MOUNT_MATRIX=0, 1, 0; -1, 0, 0; 0, 0, 1
-  '';
-  services.udev.extraRules = lib.mkBefore ''
-    ENV{DEVNAME}=="/dev/input/event6",ENV{LIBINPUT_CALIBRATION_MATRIX}="0 -1 1 1 0 0"  
   '';
 }

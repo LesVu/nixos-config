@@ -42,6 +42,7 @@
       };
 
       kodama-image = self.nixosConfigurations.kodama.config.mobile.outputs.default;
+      kodama-kpart = self.nixosConfigurations.kodama.config.mobile.outputs.depthcharge.kpart;
 
       homeConfigurations.char = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {

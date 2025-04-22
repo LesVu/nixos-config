@@ -1,10 +1,9 @@
 {
   imports = [
-    ./git.nix
     ./bash.nix
-    ./nixvim.nix
     ./direnv.nix
-    # ./desktops.nix
+    ./git.nix
+    ./nixvim.nix
     ./tmux.nix
   ];
 }

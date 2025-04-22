@@ -1,9 +1,10 @@
 {
   imports = [
-    ./zram.nix
+    ./desktops.nix
     ./env.nix
-    ./user.nix
     ./network.nix
     ./ssh.nix
+    ./user.nix
+    ./zram.nix
   ];
 }
