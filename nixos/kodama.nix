@@ -17,10 +17,10 @@
     };
   };
 
-  # mobile.boot.stage-1.kernel.package = lib.mkForce (pkgs.callPackage ./kernel {
-  #   inherit (pkgs.linuxPackages_latest) kernel;
-  # });  
-  mobile.boot.stage-1.kernel.package = lib.mkForce pkgs.linuxPackages_latest.kernel;
+  mobile.boot.stage-1.kernel.package = lib.mkForce (pkgs.callPackage ./kernel {
+    inherit (pkgs.linuxPackages) kernel;
+  });
+  # mobile.boot.stage-1.kernel.package = lib.mkForce pkgs.linuxPackages.kernel;
 
 
   # Ensure orientation match with keyboard.

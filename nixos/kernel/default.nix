@@ -1,6 +1,7 @@
 { mobile-nixos, fetchpatch, kernel, ... }:
 mobile-nixos.kernel-builder {
-  inherit (kernel) src version configfile;
+  inherit (kernel) src version;
+  configfile = ./kodama-6.12.23.config;
   patches = [
     # CHROMIUM: Revert "serial: 8250_mtk: Fix UART_EFR register address"
     # https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/3670640
