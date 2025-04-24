@@ -4,7 +4,11 @@
     ./modules
   ];
 
-  disabledModules = [ ];
+  disabledModules = [
+    ./modules/nixvim.nix
+    ./modules/tmux.nix
+    ./modules/direnv.nix
+  ];
 
   home = {
     username = "char";

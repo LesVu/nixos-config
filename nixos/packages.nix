@@ -14,11 +14,9 @@
     curl
     wget
     git
-    htop
+    btop
     unzip
     zip
-    pciutils
-    screen
 
     # Other
     home-manager

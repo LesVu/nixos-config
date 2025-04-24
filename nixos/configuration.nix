@@ -35,5 +35,7 @@
     options = "--delete-older-than 7d";
   };
 
+  documentation.enable = false;
+
   system.stateVersion = "24.11";
 }
