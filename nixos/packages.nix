@@ -18,12 +18,20 @@
     unzip
     zip
 
+    #Desktops
+    chromium
+
+    # GPU stuff 
+    glxinfo
+    vulkan-tools
+
     # Other
     home-manager
   ];
 
   fonts.packages = with pkgs; [
     noto-fonts
+    noto-fonts-cjk-sans
     nerd-fonts.hack
   ];
 }

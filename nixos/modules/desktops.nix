@@ -1,10 +1,9 @@
 {
-  services.displayManager.defaultSession = "xfce";
+  # Enable KDE 6
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
-  services.xserver.desktopManager = {
-    xterm.enable = false;
-    xfce.enable = true;
-  };
   # services.autorandr = {
   #   enable = true;
   #   profiles.main = {
@@ -16,12 +15,4 @@
   #     fingerprint = { "DSI-1" = "*"; };
   #   };
   # };
-
-  services.picom = {
-    enable = true;
-    fade = true;
-    inactiveOpacity = 0.9;
-    shadow = true;
-    fadeDelta = 4;
-  };
 }
