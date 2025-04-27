@@ -15,20 +15,21 @@
     curl
     git
     htop
+    btop
     unzip
-    zram-generator
     zip
-    pciutils
 
     # Development
     nodejs_22
     python3
-    # (pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixpkgs-fmt ]))
+    (pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixfmt-rfc-style ]))
+    android-tools
+    git-repo
 
     # Virtualization
     distrobox
-    lazydocker
-    podman-desktop
+    # lazydocker
+    # podman-desktop
 
     # GPU stuff 
     glxinfo
@@ -43,6 +44,7 @@
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
-    (nerdfonts.override { fonts = [ "Hack" ]; })
+    roboto
+    (nerdfonts.override { fonts = [ "Hack" "FiraCode" ]; })
   ];
 }
