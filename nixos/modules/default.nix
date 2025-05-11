@@ -9,6 +9,7 @@
     ./nm.nix
     ./nvidia_graphics.nix
     ./sound.nix
+    ./tablet.nix
     ./tailscale.nix
     ./user.nix
     ./virtualisation.nix

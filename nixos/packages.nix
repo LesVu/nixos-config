@@ -7,6 +7,10 @@
     # Desktop apps
     # chromium
     firefox
+    pkgs-unstable.obsidian
+    pkgs-unstable.rquickshare
+    prismlauncher
+    osu-lazer-bin
 
     # CLI utils
     fastfetch
@@ -25,11 +29,10 @@
     (pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixfmt-rfc-style ]))
     android-tools
     git-repo
+    postman
 
     # Virtualization
     distrobox
-    # lazydocker
-    # podman-desktop
 
     # GPU stuff 
     glxinfo
@@ -37,8 +40,6 @@
 
     # Other
     home-manager
-    pkgs-unstable.obsidian
-    pkgs-unstable.rquickshare
   ];
 
   fonts.packages = with pkgs; [
