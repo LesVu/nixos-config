@@ -11,6 +11,7 @@
     pkgs-unstable.rquickshare
     prismlauncher
     osu-lazer-bin
+    blender
 
     # CLI utils
     fastfetch
@@ -26,7 +27,7 @@
     # Development
     nodejs_22
     python3
-    (pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixfmt-rfc-style ]))
+    (pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixfmt-rfc-style clang-tools ]))
     android-tools
     git-repo
     postman
