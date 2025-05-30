@@ -47,6 +47,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     roboto
-    (nerdfonts.override { fonts = [ "Hack" "FiraCode" ]; })
+    nerd-fonts.hack
+    nerd-fonts.fira-code
   ];
 }
