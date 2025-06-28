@@ -1,7 +1,5 @@
 { pkgs, pkgs-unstable, ... }: {
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
@@ -31,6 +29,7 @@
     android-tools
     git-repo
     postman
+    ghidra
 
     # Virtualization
     distrobox
