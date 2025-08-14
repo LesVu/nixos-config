@@ -6,6 +6,7 @@
     ./boot.nix
     ./desktops.nix
     ./env.nix
+    ./language.nix
     ./nm.nix
     ./nvidia_graphics.nix
     ./sound.nix

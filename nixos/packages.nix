@@ -1,4 +1,5 @@
-{ pkgs, pkgs-unstable, ... }: {
+{ pkgs, pkgs-unstable, ... }:
+{
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -8,8 +9,9 @@
     pkgs-unstable.obsidian
     pkgs-unstable.rquickshare
     prismlauncher
-    osu-lazer-bin
-    blender
+    # osu-lazer-bin
+    # blender
+    # libreoffice-qt6-fresh
 
     # CLI utils
     fastfetch
@@ -23,9 +25,14 @@
     zip
 
     # Development
-    nodejs_22
-    python3
-    (pkgs-unstable.vscode.fhsWithPackages (ps: with ps; [ nil nixfmt-rfc-style clang-tools ]))
+    (pkgs-unstable.vscode.fhsWithPackages (
+      ps: with ps; [
+        nil
+        nixfmt-rfc-style
+        clang-tools
+      ]
+    ))
+    # pkgs-unstable.android-studio
     android-tools
     git-repo
     postman
@@ -33,8 +40,9 @@
 
     # Virtualization
     distrobox
+    podman-compose
 
-    # GPU stuff 
+    # GPU stuff
     glxinfo
     vulkan-tools
 
