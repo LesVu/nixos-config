@@ -23,6 +23,7 @@
     btop
     unzip
     zip
+    jq
 
     # Development
     (pkgs-unstable.vscode.fhsWithPackages (
