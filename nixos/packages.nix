@@ -1,4 +1,10 @@
-{ pkgs, pkgs-unstable, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  lib,
+  config,
+  ...
+}:
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -41,7 +47,9 @@
 
     # Virtualization
     distrobox
-    podman-compose
+    (lib.mkIf config.virtualisation.podman.enable podman-compose)
+    (lib.mkIf config.virtualisation.podman.enable docker-compose)
+    lazydocker
 
     # GPU stuff
     glxinfo
