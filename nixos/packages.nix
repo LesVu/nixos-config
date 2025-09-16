@@ -1,4 +1,5 @@
-{ pkgs, pkgs-unstable, ... }: {
+{ pkgs, pkgs-unstable, ... }:
+{
   imports = [
     ./overlays.nix
   ];
@@ -21,7 +22,7 @@
     #Desktops
     chromium
 
-    # GPU stuff 
+    # GPU stuff
     glxinfo
     vulkan-tools
 

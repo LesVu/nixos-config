@@ -1,0 +1,29 @@
+{ pkgs, ... }:
+{
+  # Select internationalisation properties.
+  i18n = {
+    defaultLocale = "en_GB.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_SG.UTF-8";
+      LC_IDENTIFICATION = "en_SG.UTF-8";
+      LC_MEASUREMENT = "en_SG.UTF-8";
+      LC_MONETARY = "en_SG.UTF-8";
+      LC_NAME = "en_SG.UTF-8";
+      LC_NUMERIC = "en_SG.UTF-8";
+      LC_PAPER = "en_SG.UTF-8";
+      LC_TELEPHONE = "en_SG.UTF-8";
+      LC_TIME = "en_SG.UTF-8";
+    };
+    # inputMethod = {
+    #   enable = true;
+    #   type = "fcitx5";
+    #   fcitx5 = {
+    #     waylandFrontend = true;
+    #     addons = with pkgs; [
+    #       fcitx5-chinese-addons
+    #       fcitx5-pinyin-zhwiki
+    #     ];
+    #   };
+    # };
+  };
+}

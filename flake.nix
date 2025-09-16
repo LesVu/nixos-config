@@ -1,9 +1,9 @@
 {
-  description = "My system configuration";
+  description = "My Chromebook 10e configuration";
 
   inputs = {
 
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -19,22 +19,29 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mobile-nixos, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      mobile-nixos,
+      ...
+    }@inputs:
 
     let
       system = "aarch64-linux";
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
 
       # kodama - system hostname
       nixosConfigurations.kodama = nixpkgs.lib.nixosSystem {
-        inherit system;
         specialArgs = {
-          pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          inherit inputs system;
+          inherit inputs system pkgs-unstable;
         };
         modules = [
           ./nixos/configuration.nix
@@ -50,7 +57,7 @@
           config.allowUnfree = true;
         };
         extraSpecialArgs = {
-          inherit system inputs;
+          inherit system inputs pkgs-unstable;
         };
         modules = [ ./home-manager/home.nix ];
       };

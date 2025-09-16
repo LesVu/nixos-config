@@ -16,5 +16,8 @@
         Option "kmsdev" "/dev/dri/card1"
       EndSection
     '';
+    videoDrivers = [
+      "modesetting"
+    ];
   };
 }

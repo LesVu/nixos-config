@@ -10,7 +10,7 @@
       {
         rb = "nixos-rebuild switch --use-remote-sudo --flake ${flakeDir}";
         upd = "nix flake update --flake ${flakeDir}";
-        upg = "nixos-rebuild switch --upgrade --use-remote-sudo --flake ${flakeDir}";
+        upg = "nixos-rebuild switch --use-remote-sudo --upgrade --flake ${flakeDir}";
 
         hms = "home-manager switch --flake ${flakeDir}";
 

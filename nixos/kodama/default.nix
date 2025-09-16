@@ -1,4 +1,8 @@
-{ lib, pkgs, inputs, ... }: {
+{
+  inputs,
+  ...
+}:
+{
   imports = [
     "${inputs.mobile-nixos}/devices/families/mainline-chromeos-mt8183"
     (import "${inputs.mobile-nixos}/lib/configuration.nix" { })
@@ -16,12 +20,6 @@
       height = 1920;
     };
   };
-
-  mobile.boot.stage-1.kernel.package = lib.mkForce (pkgs.callPackage ./kernel {
-    inherit (pkgs.linuxPackages) kernel;
-  });
-  # mobile.boot.stage-1.kernel.package = lib.mkForce pkgs.linuxPackages.kernel;
-
 
   # Ensure orientation match with keyboard.
   services.udev.extraHwdb = ''

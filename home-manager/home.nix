@@ -4,15 +4,11 @@
     ./modules
   ];
 
-  disabledModules = [
-    ./modules/nixvim.nix
-    ./modules/tmux.nix
-    ./modules/direnv.nix
-  ];
+  disabledModules = [ ];
 
   home = {
     username = "char";
     homeDirectory = "/home/char";
-    stateVersion = "24.11";
+    stateVersion = "25.05";
   };
 }
