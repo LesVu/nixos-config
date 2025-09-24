@@ -7,7 +7,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     lix = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -19,7 +19,15 @@
     nixvim-flake.url = "github:LesVu/nixvim_config";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, lix, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      lix,
+      home-manager,
+      ...
+    }@inputs:
 
     let
       system = "x86_64-linux";

@@ -1,18 +1,29 @@
-let dns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
-in {
+let
+  dns = [
+    "1.1.1.1#one.one.one.one"
+    "1.0.0.1#one.one.one.one"
+  ];
+in
+{
   networking = {
     dhcpcd.enable = false;
     useDHCP = false;
     nameservers = dns;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 80 443 5173 3000 ];
+      allowedTCPPorts = [
+        22
+        80
+        443
+        5173
+        3000
+      ];
     };
   };
 
   services.resolved = {
     enable = true;
-    dnssec = "true";
+    dnssec = "allow-downgrade";
     domains = [ "~." ];
     fallbackDns = dns;
     dnsovertls = "true";

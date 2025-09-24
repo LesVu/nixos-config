@@ -1,4 +1,5 @@
-{ pkgs, pkgs-unstable, ... }: {
+{ pkgs, pkgs-unstable, ... }:
+{
   imports = [
     ./overlays.nix
   ];
@@ -18,6 +19,7 @@
     unzip
     zip
     pciutils
+    rclone
 
     # Development
     nodejs_22
