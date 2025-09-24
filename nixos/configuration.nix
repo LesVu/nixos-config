@@ -7,7 +7,6 @@
 
   disabledModules = [
     ./modules/tablet.nix
-    ./modules/tailscale.nix
   ];
 
   # Define your hostname.

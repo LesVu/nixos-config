@@ -6,10 +6,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    lix = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # lix = {
+    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -19,7 +19,15 @@
     nixvim-flake.url = "github:LesVu/nixvim_config";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, lix, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      # lix,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs-unstable = import nixpkgs-unstable {
@@ -34,7 +42,7 @@
           inherit inputs system pkgs-unstable;
         };
         modules = [
-          lix.nixosModules.default
+          # lix.nixosModules.default
           ./nixos/configuration.nix
         ];
       };

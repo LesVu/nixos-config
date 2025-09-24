@@ -6,8 +6,26 @@
   ...
 }:
 {
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
 
+    # Overlays
+    overlays = [
+      (final: prev: {
+        inherit (prev.lixPackageSets.stable)
+          nixpkgs-review
+          nix-eval-jobs
+          nix-fast-build
+          colmena
+          ;
+      })
+    ];
+  };
+
+  # Lix
+  nix.package = pkgs.lixPackageSets.stable.lix;
+
+  # System Packages
   environment.systemPackages = with pkgs; [
     # Desktop apps
     # chromium
@@ -37,13 +55,15 @@
         nil
         nixfmt-rfc-style
         clang-tools
+        shfmt
+        deno
       ]
     ))
     # pkgs-unstable.android-studio
     android-tools
     git-repo
     postman
-    ghidra
+    # ghidra
 
     # Virtualization
     distrobox
@@ -59,6 +79,7 @@
     home-manager
   ];
 
+  # Font Packages
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
