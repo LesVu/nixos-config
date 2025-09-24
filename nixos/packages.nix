@@ -8,6 +8,9 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # Lix
+  nix.package = pkgs.lixPackageSets.stable.lix;
+
   environment.systemPackages = with pkgs; [
     # CLI utils
     fastfetch

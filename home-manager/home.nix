@@ -1,8 +1,6 @@
 {
 
-  imports = [
-    ./modules/bundle.nix
-  ];
+  imports = [ ./modules ];
 
   disabledModules = [ ];
 

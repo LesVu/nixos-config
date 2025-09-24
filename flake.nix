@@ -6,11 +6,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    lix = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3-1.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,30 +19,25 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
-      lix,
       home-manager,
       ...
     }@inputs:
 
     let
       system = "x86_64-linux";
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
-
       # capybara - system hostname
       nixosConfigurations.capybara = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          inherit inputs system;
+          inherit inputs system pkgs-unstable;
         };
-        modules = [
-          lix.nixosModules.default
-          ./nixos/configuration.nix
-        ];
+        modules = [ ./nixos/configuration.nix ];
       };
 
       homeConfigurations.char = home-manager.lib.homeManagerConfiguration {
@@ -56,7 +46,7 @@
           config.allowUnfree = true;
         };
         extraSpecialArgs = {
-          inherit system inputs;
+          inherit inputs system pkgs-unstable;
         };
         modules = [ ./home-manager/home.nix ];
       };

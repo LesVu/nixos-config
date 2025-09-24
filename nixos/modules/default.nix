@@ -1,13 +1,13 @@
 {
   imports = [
-    ./zram.nix
-    ./env.nix
-    ./user.nix
     ./boot.nix
+    ./env.nix
+    ./language.nix
     ./network.nix
-    ./bluetooth.nix
     ./ssh.nix
     ./tailscale.nix
+    ./user.nix
     ./virtualisation.nix
+    ./zram.nix
   ];
 }
