@@ -23,7 +23,7 @@
     screen
 
     # Development
-    nodejs_18
+    nodejs_24
     nixpkgs-fmt
     nil
 
@@ -37,8 +37,9 @@
     pkgs-unstable.raspberrypi-eeprom
   ];
 
+    # Font Packages
   fonts.packages = with pkgs; [
     noto-fonts
-    (nerdfonts.override { fonts = [ "Hack" ]; })
+    nerd-fonts.hack
   ];
 }
