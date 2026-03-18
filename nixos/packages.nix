@@ -53,7 +53,7 @@
     (pkgs-unstable.vscode.fhsWithPackages (
       ps: with ps; [
         nil
-        nixfmt-rfc-style
+        nixfmt
         clang-tools
         shfmt
         deno
@@ -72,7 +72,7 @@
     lazydocker
 
     # GPU stuff
-    glxinfo
+    mesa-demos
     vulkan-tools
 
     # Other

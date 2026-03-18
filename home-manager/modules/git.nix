@@ -1,7 +1,11 @@
 {
   programs.git = {
     enable = true;
-    userName  = "LesVu";
-    userEmail = "placeholder";
+    settings = {
+      user = {
+        name = "LesVu";
+        email = "placeholder";
+      };
+    };
   };
 }
